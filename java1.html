@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+
+    <form id="calculater">
+        <h4 for="operation">operation:</h4>
+        <select id="operation" name="operation">
+            <option value="+">Add (+)</option>
+
+            <option value="-">Subtracte (-)</option>
+            
+             <option value="*">Multiplication (*)</option>
+         
+         
+             <option value="/">Division (/)</option>
+        
+            </select><br><br>
+        
+            <h4 for="num1">first number:</h4>
+        <input type="number" id="num1" name="num1"><br><br>
+        <h4 for="num2">second number:</h4>
+        <input type="number" id="num2" name="num2"><br><br>
+        <input type="submit" value="Calculate">
+    </form>
+    <div id="result"></div>
+
+    <script>
+
+        document.getElementById('calculater').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            
+            var operation = document.getElementById('operation').value;
+            var x = parseFloat(document.getElementById('num1').value);
+            var y = parseFloat(document.getElementById('num2').value);
+
+            
+            var result;
+            if (operation === '+') {
+                result = x + y;
+            } 
+            else if (operation === '-') {
+                     result = x - y;
+            }
+             else if (operation === '*') {
+                result = x * y;
+            }
+             else if (operation === '/') {
+                  result = x / y;
+            }
+
+            // Display the result
+            document.getElementById('result').innerText = "result: " + num1 + " " + operation + " " + num2 + " = " + result;
+        });
+    </script>
+</body>
+</html>
