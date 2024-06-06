@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,23 +13,23 @@
 
     <div>
         <h1> Check Even or Odd</h1>
-        <input type="number" id="num">
-        <button type="button" onclick="CheckNumber()"> Check Number</button>
+        <input type="number" id="number1">
+        <button type="button" onclick="fun1()"> Check Number</button>
     </div>
 <br><br>
 
     <div>
         <h1> Determine Age Eligibility for a Movie</h1>
-        <button type="button" onclick="CheckAge()"> Check Number</button>
-        <h2 id="age-result"></h2>
+        <button type="button" onclick="showage()"> Check Number</button>
+        <h2 id="age"></h2>
 
     </div>
     <br><br>
 
     <div>
         <h1>Check Weather Conditions</h1>
-        <button type="button" onclick="CheckWeather()"> Check Number</button>
-        <h2 id="Weather-result"></h2>
+        <button type="button" onclick="weather()"> Check Number</button>
+        <h2 id="weather"></h2>
 
     </div>
     <br><br>
@@ -35,8 +37,8 @@
 
     <div>
         <h1>Check Passing Grade</h1>
-        <button type="button" onclick="CheckGrad()"> Check Number</button>
-        <h2 id="Grad-result"></h2>
+        <button type="button" onclick="grade()"> Check Number</button>
+        <h2 id="grade"></h2>
 
     </div>
 
@@ -44,8 +46,8 @@
 
     <div>
         <h1>Determine the Larger Number</h1>
-        <button type="button" onclick="VerifyPass()"> Check Number</button>
-        <h2 id="Larger-result"></h2>
+        <button type="button" onclick="largenum()"> Check Number</button>
+        <h2 id="largenum"></h2>
 
     </div>
     <br><br>
@@ -53,8 +55,8 @@
 
     <div>
         <h1>Verify Password</h1>
-        <button type="button" onclick="VerifyPass()"> Check Password</button>
-        <h2 id="Pass-result"></h2>
+        <button type="button" onclick="password()"> Check Password</button>
+        <h2 id="password"></h2>
 
     </div>
 
@@ -62,8 +64,8 @@
 
     <div>
         <h1> Check Username and Password</h1>
-        <button type="button" onclick="CheckUserNameAndPass()"> Check User Name and password</button>
-        <h2 id="UsernameAndPass-result"></h2>
+        <button type="button" onclick="checkpass()"> Check User Name and password</button>
+        <h2 id="username"></h2>
 
     </div>
     <br><br>
@@ -71,7 +73,7 @@
 
     <div>
         <h1>Determine Academic Grade</h1>
-        <button type="button" onclick="CheckAcadimicGrade()"> Check Grade</button>
+        <button type="button" onclick="checkgrade()"> Check Grade</button>
 
     </div>
 
@@ -80,7 +82,7 @@
 
     <div>
         <h1>Determine Age Category</h1>
-        <button type="button" onclick="CheckAgeCategory()"> Check Age</button>
+        <button type="button" onclick="checkcategory()"> Check Age</button>
 
     </div>
 
@@ -88,7 +90,7 @@
 
     <div>
         <h1> Check Membership Type</h1>
-        <button type="button" onclick="CheckMembership()"> Check Membership</button>
+        <button type="button" onclick="membership()"> Check Membership</button>
 
     </div>
 
@@ -103,9 +105,9 @@
     
 </body>
 
-<script>function CheckNumber(){
-  var num = document.getElementById("num").value;
-  if(num % 2== 0 ){
+<script>function fun1(){
+  var number1 = document.getElementById("number1").value;
+  if(number1 % 2== 0 ){
       alert("The number is even");
   }
   else{
@@ -113,89 +115,94 @@
   }
 }
 
-
-function CheckAge(){
+/*tak 2*/
+function showage(){
  let age =  prompt("Please Enter Your Age: ", );
  if(age>=18){
-  document.getElementById("age-result").innerHTML = "You Can watch  movie"
+  document.getElementById("age").innerHTML = "you can watch  movie"
  }
   else{
-      document.getElementById("age-result").innerHTML = "You Can't watch  movie"
+      document.getElementById("age").innerHTML = "You Can't watch  movie"
   }
 
 }
 
 
+/*tak 3*/
 
-
-function CheckWeather(){
+function weather(){
   let weather =  prompt("Please Enter the Weather: ", );
   if(weather<20){
-   document.getElementById("Weather-result").innerHTML = "The wather is cold"
+   document.getElementById("weather").innerHTML = "The wather is cold"
   }
   else if(weather>=20 && weather<=30){
-       document.getElementById("Weather-result").innerHTML = "The wather is Hot"
+       document.getElementById("weather").innerHTML = "The wather is Hot"
    }
    else{
-      document.getElementById("Weather-result").innerHTML = "The wather is Very Hot"
+      document.getElementById("weather").innerHTML = "The wather is Very Hot"
 
    }
 
 }
 
+/*tak 3*/
 
-function CheckGrad(){
-  let grad =  prompt("Please Enter Your Grad: ", );
-  if(grad>=50){
-      document.getElementById("Grad-result").innerHTML = "You Passed"
+function grade(){
+  let grade1 =  prompt("Please Enter Your Grad: ", );
+  if(grade1>=50){
+      document.getElementById("grade").innerHTML = "You Passed"
   }
   else{
       document.getElementById("Grad-result").innerHTML = "You Failed"
   }
 }
 
-function CheckLarger(){
+
+/*tak 4*/
+
+function largenum(){
   let num1 = parseInt(prompt("Please Enter the First Number: ", ));
   let num2 = parseInt(prompt("Please Enter the Second Number: ", ));
   if(num1>num2){
-      document.getElementById("Larger-result").innerHTML = "The Larger Number is " + num1
+      document.getElementById("largenum").innerHTML = "The Larger Number is " + num1
       }
   else if(num2>num1){
-      document.getElementById("Larger-result").innerHTML = "The Larger Number is " + num2
+      document.getElementById("largenum").innerHTML = "The Larger Number is " + num2
       }
 }
 
+/*tak 5*/
 
-function VerifyPass(){
+function password(){
   let pass = prompt("Please Enter Your Password: ", );
-  let confirmPass = "mutasem";
-  if(pass === confirmPass){
-      document.getElementById("Pass-result").innerHTML = "Login successful"
+  let checkpass = "yaser123";
+  if(pass === checkpass){
+      document.getElementById("password").innerHTML = "Login successful"
 
   }
   else{
-      document.getElementById("Pass-result").innerHTML = "Incorrect password"
+      document.getElementById("passwordt").innerHTML = "Incorrect password"
   }
 }
 
+/*task 6*/
 
-
-function CheckUserNameAndPass(){
+function checkpass(){
   let username = prompt("Please Enter Your Username: ", );
   let password = prompt("Please Enter Your Password: ", );
-  let confirmUsername = "mutasem";
-  let confirmPassword = "123456";
+  let confirmUsername = "yaser";
+  let confirmPassword = "123ys";
   if(username === confirmUsername && password === confirmPassword){
-      document.getElementById("UsernameAndPass-result").innerHTML = "Login successful"
+      document.getElementById("username").innerHTML = "Login successful"
       }
   else{
-      document.getElementById("UsernameAndPass-result").innerHTML = "Incorrect username or password"
+      document.getElementById("username").innerHTML = "Incorrect username or password"
       }
 }
 
 
-
-function CheckAcadimicGrade(){
+/*task6*/
+function checkgrade(){
   let grade = parseInt(prompt("Please Enter Your Grade: ", ));
   if(grade >= 90){
       alert("A");
@@ -214,8 +221,9 @@ function CheckAcadimicGrade(){
       }
 }
 
+/*tak 7*/
 
-function CheckAgeCategory(){
+function checkcategory(){
   let age = parseInt(prompt("Please Enter Your Age: ", ));
   if(age < 13){
       alert("Child");
@@ -232,7 +240,7 @@ function CheckAgeCategory(){
 }
 
 
-function CheckMembership(){
+function membership(){
   let membership = prompt("Please Enter Your Membership Type (Basic, Silver, Gold): ");
   if(membership === "Basic"){
       alert("Access to basic content");
@@ -249,3 +257,4 @@ function CheckMembership(){
 <script>
 </script>
 </html>
+
