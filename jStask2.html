@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <h1> Check Even or Odd</h1>
+        <input type="number" id="number1">
+        <button type="button" onclick="fun1()"> Check Number</button>
+    </div>
+<br><br>
+
+    <div>
+        <h1> Determine Age Eligibility for a Movie</h1>
+        <button type="button" onclick="showage()"> Check Number</button>
+        <h2 id="age"></h2>
+
+    </div>
+    <br><br>
+
+    <div>
+        <h1>Check Weather Conditions</h1>
+        <button type="button" onclick="weather()"> Check Number</button>
+        <h2 id="weather"></h2>
+
+    </div>
+    <br><br>
+
+
+    <div>
+        <h1>Check Passing Grade</h1>
+        <button type="button" onclick="grade()"> Check Number</button>
+        <h2 id="grade"></h2>
+
+    </div>
+
+    <br><br>
+
+    <div>
+        <h1>Determine the Larger Number</h1>
+        <button type="button" onclick="largenum()"> Check Number</button>
+        <h2 id="largenum"></h2>
+
+    </div>
+    <br><br>
+
+
+    <div>
+        <h1>Verify Password</h1>
+        <button type="button" onclick="password()"> Check Password</button>
+        <h2 id="password"></h2>
+
+    </div>
+
+    <br><br>
+
+    <div>
+        <h1> Check Username and Password</h1>
+        <button type="button" onclick="checkpass()"> Check User Name and password</button>
+        <h2 id="username"></h2>
+
+    </div>
+    <br><br>
+
+
+    <div>
+        <h1>Determine Academic Grade</h1>
+        <button type="button" onclick="checkgrade()"> Check Grade</button>
+
+    </div>
+
+    <br><br>
+
+
+    <div>
+        <h1>Determine Age Category</h1>
+        <button type="button" onclick="checkcategory()"> Check Age</button>
+
+    </div>
+
+    <br><br>
+
+    <div>
+        <h1> Check Membership Type</h1>
+        <button type="button" onclick="membership()"> Check Membership</button>
+
+    </div>
+
+
+    
+
+
+
+    
+
+    
+    
+</body>
+
+<script>function fun1(){
+  var number1 = document.getElementById("number1").value;
+  if(number1 % 2== 0 ){
+      alert("The number is even");
+  }
+  else{
+      alert("The number is odd");
+  }
+}
+
+/*tak 2*/
+function showage(){
+ let age =  prompt("Please Enter Your Age: ", );
+ if(age>=18){
+  document.getElementById("age").innerHTML = "you can watch  movie"
+ }
+  else{
+      document.getElementById("age").innerHTML = "You Can't watch  movie"
+  }
+
+}
+
+
+/*tak 3*/
+
+function weather(){
+  let weather =  prompt("Please Enter the Weather: ", );
+  if(weather<20){
+   document.getElementById("weather").innerHTML = "The wather is cold"
+  }
+  else if(weather>=20 && weather<=30){
+       document.getElementById("weather").innerHTML = "The wather is Hot"
+   }
+   else{
+      document.getElementById("weather").innerHTML = "The wather is Very Hot"
+
+   }
+
+}
+
+/*tak 3*/
+
+function grade(){
+  let grade1 =  prompt("Please Enter Your Grad: ", );
+  if(grade1>=50){
+      document.getElementById("grade").innerHTML = "You Passed"
+  }
+  else{
+      document.getElementById("Grad-result").innerHTML = "You Failed"
+  }
+}
+
+
+/*tak 4*/
+
+function largenum(){
+  let num1 = parseInt(prompt("Please Enter the First Number: ", ));
+  let num2 = parseInt(prompt("Please Enter the Second Number: ", ));
+  if(num1>num2){
+      document.getElementById("largenum").innerHTML = "The Larger Number is " + num1
+      }
+  else if(num2>num1){
+      document.getElementById("largenum").innerHTML = "The Larger Number is " + num2
+      }
+}
+
+/*tak 5*/
+
+function password(){
+  let pass = prompt("Please Enter Your Password: ", );
+  let checkpass = "yaser123";
+  if(pass === checkpass){
+      document.getElementById("password").innerHTML = "Login successful"
+
+  }
+  else{
+      document.getElementById("passwordt").innerHTML = "Incorrect password"
+  }
+}
+
+/*task 6*/
+
+function checkpass(){
+  let username = prompt("Please Enter Your Username: ", );
+  let password = prompt("Please Enter Your Password: ", );
+  let confirmUsername = "yaser";
+  let confirmPassword = "123ys";
+  if(username === confirmUsername && password === confirmPassword){
+      document.getElementById("username").innerHTML = "Login successful"
+      }
+  else{
+      document.getElementById("username").innerHTML = "Incorrect username or password"
+      }
+}
+
+
+/*task6*/
+function checkgrade(){
+  let grade = parseInt(prompt("Please Enter Your Grade: ", ));
+  if(grade >= 90){
+      alert("A");
+  }
+  else if(grade>=80 && grade <90){
+      alert("B");
+  }
+  else if(grade>=70 && grade <80){
+      alert("C");
+      }
+  else if(grade>=60 && grade <70){
+      alert("D");
+      }
+  else{
+      alert("F");
+      }
+}
+
+/*tak 7*/
+
+function checkcategory(){
+  let age = parseInt(prompt("Please Enter Your Age: ", ));
+  if(age < 13){
+      alert("Child");
+      }
+  else if(age >= 13 && age < 20){
+      alert("Teenager");
+      }
+  else{
+      alert("Adult");
+  }
+
+
+
+}
+
+
+function membership(){
+  let membership = prompt("Please Enter Your Membership Type (Basic, Silver, Gold): ");
+  if(membership === "Basic"){
+      alert("Access to basic content");
+  }
+  else if(membership === "Silver"){
+      alert("Access  and silver content");
+      }
+  else if(membership === "Gold"){
+      alert("Access to all content");
+      }
+
+}</script>
+
+<script>
+</script>
+</html>
