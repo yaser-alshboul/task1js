@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+     <!--task1******************-->
+     <div>
+        <h1> BMI </h1>
+        <button type="button" onclick="bmi1()">  input a number </button>
+        </div>
+        <br><br>
+
+<!-- **************************************  -->
+  <div>
+  <h1> Check Isleapyear</h1>
+  <input type="number1" id="year1">
+  <button type="button" onclick="fun1()"> Check year</button>
+   </div>
+<br><br>
+<!--tak2--------------------------->
+<div >
+  <h2>Exam Score Input</h2>
+
+  <form id="examForm">
+    <label for="score">Enter your exam score:</label><br>
+    <input type="number" id="score" name="score"><br>
+  
+    <button type="submit">Submit</button>
+    <p id="score1"></p>
+  </form>
+  </div>
+<br><br>
+
+  <!--tak3--------------------------->
+
+<div>
+  <h1>Determine the Larger Number</h1>
+  <button type="button" onclick="largenum()"> Check Number</button>
+  <h2 id="largenum"></h2>
+
+</div>
+<br><br>
+
+<!--task4--------------------------->
+<div>
+<h1>check current balance and the withdrawal amount</h1>
+<button type="button" onclick="balance()"> Check balance</button>
+<h2 id="larg"></h2>
+</div>
+
+<!--task5--------------------------->
+<h1>Enter Tempreture</h1>
+<button type="button" onclick="temp()"> Check Tempreture</button>
+<h2 id="temp1"></h2>
+<br><br>
+
+<!--task7--------------------------->
+<div>
+  <h1>check total amount of your shopping</h1>
+  <button type="button" onclick="shopping()"> Check shopping balance</button>
+  <h2 id="shop"></h2>
+  </div>
+  <br><br>
+
+  
+<!--task8--------------------------->
+<div>
+  <h1>check strength of your password</h1>
+  <button type="button" onclick="password7()"> Check password</button>
+  <h2 id="pass"></h2>
+  </div>
+  <br><br>
+
+  <!-- task9 **************-->
+  <div>
+    <h1>arithmetic operator</h1>
+    <button type="button" onclick="operate()"> Check operation</button>
+    <h2 id="oper"></h2>
+    </div>
+    <br><br>
+<!-- task10**************-->
+<div>
+  <h1>borrow Books</h1>
+  <button type="button" onclick="book1()"> Check operation</button>
+  <h2 id="book2"></h2>
+  </div>
+  <br><br>
+</body>
+
+<!-- task11**************-->
+<div>
+  <h1>eligible to vote</h1>
+  <button type="button" onclick="age2()"> Check age and nationality</button>
+  <h2 id="age2"></h2>
+  </div>
+  <br><br>
+<!--task 12----------->
+  <div>
+    <h1>check tempreture</h1>
+    <button type="button" onclick="temp2()"> enter </button>
+    <h2 id="temp2"></h2>
+    </div>
+    <br><br>
+
+    <!--task 13----------->
+  <div>
+    <h1>Age and type of movie</h1>
+    <button type="button" onclick="movie()"> enter </button>
+    <h2 id="movie"></h2>
+    </div>
+    <br><br>
+
+    
+    <!--task 14----------->
+  <div>
+    <h1> input their order</h1>
+    <button type="button" onclick="order()"> enter </button>
+    <h2 id="movie"></h2>
+    </div>
+    <br><br>
+    
+    <!--task 15----------->
+  <div>
+    <h1> enter exam grade</h1>
+    <button type="button" onclick="exam4()"> enter </button>
+    </div>
+    <br><br>
+     
+    <!--task 16----------->
+  <div>
+    <h1>  login system</h1>
+    <button type="button" onclick="login()"> enter </button>
+    </div>
+    <br><br>
+    <!--task17******************-->
+    <div>
+      <h1>   entercurrent color of a traffic light</h1>
+      <button type="button" onclick="color1()">  current color of a traffic light</button>
+      </div>
+      <br><br>
+      <!--task18******************-->
+    <div>
+      <h1>  days of week</h1>
+      <button type="button" onclick="week()">  days of week</button>
+      </div>
+      <br><br>
+      <!--task19******************-->
+    <div>
+      <h1>  input the type of room</h1>
+      <button type="button" onclick="room()">  type of room</button>
+      </div>
+      <br><br>
+      <!--task20******************-->
+    <div>
+      <h1>  input a number </h1>
+      <button type="button" onclick="number1()">  input a number </button>
+      </div>
+      <br><br>
+</body>
+
+
+
+<script>
+
+    /*task1**********************************/
+    function bmi1(){
+        var weight = parseFloat(prompt("Enter your weight in kilograms:"));
+  var height = parseFloat(prompt("Enter your height in meters:"));
+
+  
+  var bmi = weight / (height * height);
+
+ 
+  var category;
+  if (bmi < 18.5) {
+    category = "Underweight";
+  } else if (bmi >= 18.5 && bmi < 25) {
+    category = "Normal weight";
+  } else if (bmi >= 25 && bmi < 30) {
+    category = "Overweight";
+  } else {
+    category = "Obesity";
+  }
+
+  alert("Your BMI is: " + bmi.toFixed(2) + "\nCategory: " + category);
+    }
+    /************************************************/
+    function fun1(){
+  var number1 = document.getElementById("year1").value;
+  if(number1 % 400== 0 ){
+      alert("The year is leapyear");
+  }
+ else if(number1 % 4 ==0 && number1 % 100!=0){
+      alert("The year is leap year");
+  }else{
+   alert("the year isnot leapyear");
+  }
+}
+
+/*tak2*/
+
+document.getElementById("examForm").addEventListener("submit", function(event) {
+  event.preventDefault(); 
+
+  var score = parseFloat(document.getElementById("score").value);
+
+  var bonusCompleted = confirm("Did you complete any bonus assignments?");
+  if (bonusCompleted) {
+    score += 5; 
+  }
+  var grade;
+  if (score >= 90) {
+    grade = 'A';
+  } else if (score >= 80) {
+    grade = 'B';
+  } else if (score >= 70) {
+    grade = 'C';
+  } else if (score >= 60) {
+    grade = 'D';
+  } else {
+    grade = 'F';
+  }
+
+  alert("Your grade is: " + grade);
+  document.getElementById("score1").innerHTML = "Your grade is: " + grade;
+});
+/*task3**********************/
+
+function largenum(){
+  let num1 = parseInt(prompt("Please Enter the First Number: ", ));
+  let num2 = parseInt(prompt("Please Enter the Second Number: ", ));
+  let num3=parseInt(prompt("Please Enter the Thired Number: ", ));
+  if(num1>num2){
+    if(num1>num3){
+      document.getElementById("largenum").innerHTML = "The Larger Number is " + num1;
+    }else{
+      document.getElementById("largenum").innerHTML = "The Larger Number is " + num3;
+    }
+      }
+  else if(num2>num3){
+      document.getElementById("largenum").innerHTML = "The Larger Number is " + num2;
+      }else{
+        document.getElementById("largenum").innerHTML = "The Larger Number is " + num3
+      }
+}
+
+/*task4--------------*/
+
+function balance(){
+  let balance1 = parseInt(prompt("Please Enter value balance: ", ));
+ 
+  let acount1=300;
+  let result=0;
+  if(balance1 <= acount1 && balance1 >0){
+    result=acount1-balance1;
+      document.getElementById("larg").innerHTML = "your balance is " + result;
+    }
+    else{
+      document.getElementById("larg").innerHTML = "erorr value ";
+    }
+  }
+
+  /*task6--------------*/
+
+function temp(){
+  let temp1 = parseFloat(prompt("Please Enter the Tempreture: ", ));
+  var fahrenheit = (temp1 * 9/5) + 32;
+
+  var state;
+  if (temp1 < 0) {
+    state = "below freezing";
+  } else if (temp1 > 100) {
+    state = "above boiling";
+  } else {
+    state = "normal";
+  }
+  alert("The temperature in fahrenheit is: " + fahrenheit.toFixed(2) + "°F \n " + state);
+}
+
+/*task7--------------*/
+
+function shopping(){
+  let amount1 = parseInt(prompt("Please Enter amount of your shopping: ", ));
+ 
+  let result=0;
+  if(amount1 >100){
+    result=amount1*0.90;
+      document.getElementById("shop").innerHTML = "amount of your shopping after discount 10% is " + result;
+    }else if(amount1>200){
+    result=amount1*0,80;
+    document.getElementById("shop").innerHTML = "amount of your shopping after discount 20% is " + result;
+    }else{
+      document.getElementById("shop").innerHTML = "amount of your shopping is " + result;
+  }
+}
+
+/*task 8*************************************/
+
+function password7(){
+var password = prompt("Please enter your password:");
+
+  var lengthCheck = false;
+  var hasNumber = false;
+  var hasSpecialChar = false;
+
+  if (password.length >= 8) {
+    lengthCheck = true;
+  }
+
+  for (var i = 0; i < password.length; i++) {
+    if (!isNaN(password[i])) {
+      hasNumber = true;
+      break;
+    }
+  }
+  var specialChars = "!@#$%^&*()-_+=[]{}|;:,.<>?";
+  for (var j = 0; j < password.length; j++) {
+    if (specialChars.includes(password[j])) {
+      hasSpecialChar = true;
+      break;
+    }
+  }
+  var strength;
+  if (lengthCheck && hasNumber && hasSpecialChar) {
+    strength = "strong";
+    document.getElementById("pass").innerHTML = "strength of your password /t" + strength;
+  } else if (lengthCheck || (hasNumber && hasSpecialChar) || (lengthCheck && hasNumber) || (lengthCheck && hasSpecialChar)) {
+    strength = "moderate";
+    document.getElementById("pass").innerHTML = "strength of your password \t" + strength;
+  } else {
+    strength = "weak";
+    document.getElementById("pass").innerHTML = "strength of your password \t" + strength;
+  }
+}
+
+/*******tak9*********************************/
+function operate(){
+ var num1 = parseFloat(prompt("Enter the first number:"));
+  var operator = prompt("Enter the arithmetic operator (+, -, *, /):");
+  var num2 = parseFloat(prompt("Enter the second number:"));
+  var result;
+  if (operator === "+") {
+    result = num1 + num2;
+    document.getElementById("oper").innerHTML = "result is: \t" + result;
+  } else if (operator === "-") {
+    result = num1 - num2;
+    document.getElementById("oper").innerHTML = "result is: \t" + result;
+  } else if (operator === "*") {
+    result = num1 * num2;
+    document.getElementById("oper").innerHTML = "result is: \t" + result;
+  } else if (operator === "/") {
+
+    if (num2 === 0) {
+      result = "Division by zero is not allowed";
+      document.getElementById("oper").innerHTML = "result is: \t" + result;
+    } else {
+      result = num1 / num2
+      document.getElementById("oper").innerHTML = "result is: \t" + result;
+    }
+  } else {
+    result = "Invalid operator";
+    document.getElementById("oper").innerHTML = "result is: \t" + result;
+  }
+
+  alert("Result: " + result);
+  document.getElementById("oper").innerHTML = "result is: \t" + result;
+}
+
+
+/***********task10******************/
+function book1(){
+
+var persontype = prompt("are you student or teacher):");
+  var books = parseInt(prompt("Enter the number of books you want to borrow:"));
+  var studentlimit = 3;
+  var teacherlimit = 5;
+
+  
+  var message;
+  if (persontype.toLowerCase() === "student") {
+    if (books <= studentlimit) {
+      message = "You can borrow " + books + " books.";
+      document.getElementById("book2").innerHTML = "result is agree: \t" + message;
+    } else {
+      message = "Students can't borrow up to " + studentlimit + " books.";
+      document.getElementById("book2").innerHTML = "result is agree: \t" + message;
+    }
+  } else if (persontype.toLowerCase() === "teacher") {
+    if (books <= teacherlimit) {
+     message = "You can borrow " + books + " books.";
+     document.getElementById("book2").innerHTML = "result is agree: \t" + message;
+    } else {
+      message = " Teachers can't borrow up to " + teacherlimit + " books.";
+      document.getElementById("book2").innerHTML = "result is agree: \t" + message;
+    }
+  } else {
+    message = "Invalid user type. Please enter student or teacher.";
+    document.getElementById("book2").innerHTML = "result is agree: \t" + message;
+  }
+
+  alert(message);
+  document.getElementById("book2").innerHTML = "result is agree: \t" + message;
+}
+/************task11****/
+function age2(){
+  
+        let approvedAge, approvedNationality;
+        let age = prompt("Enter Your Age:");
+        if (age >= 18) approvedAge = true;
+
+        let nationality = prompt('Enter Your nationality:');
+        if (nationality.toLocaleLowerCase() == 'American') approvedNationality;
+
+        if (approvedAge && approvedNationality) alert('can vote');
+        else alert("can't vote!");
+      
+}
+
+/****task12**********/
+
+function temp2(){
+  var temperature = parseFloat(prompt("Enter the temperature in Celsius:"));
+
+  
+  var message;
+  if (temperature < 0) {
+    message = "Very Cold";
+  } else if (temperature >= 0 && temperature <= 15) {
+    message = "Cold";
+  } else if (temperature >= 16 && temperature <= 25) {
+    message = "Warm";
+  } else {
+    message = "Hot";
+  }
+  alert("The temperature is categorized as: " + message);
+}
+/*task13****************************/
+
+function movie(){
+  var age = parseInt(prompt("Enter your age:"));
+  var movieType = prompt("Enter the type of movie Regular or 3D:").toLowerCase();
+
+
+  var Price = 10;
+  var discount = 7; 
+  var premium = 15; 
+  var ticketPrice;
+  if (age < 12) {
+  
+    ticketPrice = movieType === "3d" ? premiumP : discount;
+  } else {
+    
+    ticketPrice = movieType === "3d" ? premium: Price;
+  }
+
+  alert("Your ticket price is: " + ticketPrice.toFixed(2));
+}
+
+/*task 14*************/
+function order(){
+  
+
+  var order = prompt("Enter your order (Pizza, Pasta, Salad):").toLowerCase();
+  var pizzaPrice = 10;
+  var pastaPrice = 8;
+  var saladPrice = 6;
+
+  var totalPrice = 0;
+
+  if (order === "pizza") {
+    totalPrice += pizzaPrice;
+  } else if (order === "pasta") {
+    totalPrice += pastaPrice;
+  } else if (order === "salad") {
+    totalPrice += saladPrice;
+  } else {
+    alert("againe Please choose from Pizza, Pasta, or Salad.");
+  }
+
+ 
+  var additionalItems = confirm("Would you like to order additional items?");
+  if (additionalItems) {
+    var additionalOrder = prompt("Enter your additional order (Pizza, Pasta, Salad):").toLowerCase();
+    if (additionalOrder === "pizza") {
+      totalPrice += pizzaPrice;
+    } else if (additionalOrder === "pasta") {
+      totalPrice += pastaPrice;
+    } else if (additionalOrder === "salad") {
+      totalPrice += saladPrice;
+    } else {
+      alert("Invalid additional order. Discount not applied.");
+    }
+  }
+
+ 
+  alert("Your total price is: $" + totalPrice.toFixed(2));
+}
+/*tak15******************************/
+function exam4(){
+  var gr1 = parseFloat(prompt("Enter your grade for the first subject:"));
+  var gr2 = parseFloat(prompt("Enter your grade for the second subject:"));
+  var gr3 = parseFloat(prompt("Enter your grade for the third subject:"));
+
+
+  var average = (gr1 + gr2 + gr3) / 3;
+
+  var result;
+  if (average >= 60) {
+    result = "Pass";
+  } else {
+    result = "Fail";
+  }
+  alert(" average grade is: " + average.toFixed(2) + result);
+}
+/************task16***********/
+function login(){
+var predefinedUsername = "yaer";
+  var predefinedPassword = "1235oi";
+
+  var username = prompt("enter username:");
+  var password = prompt("enter password:");
+
+  if (username === predefinedUsername) {
+    if (password === predefinedPassword) {
+      alert("Login successful!");
+    } else {
+      alert("Incorrect password. Please try again.");
+    }
+  } else {
+    alert("Username not found. Please try again.");
+  }
+}
+/************task17*******************/
+
+function color1(){
+  var color = prompt("Enter the current color of the traffic light (Red, Yellow, Green):").toLowerCase();
+
+var action;
+if (color === "red") {
+  action = "Stop";
+} else if (color === "yellow") {
+  action = "Slow down";
+} else if (color === "green") {
+  action = "Go";
+} else {
+  action = "Invalid color";
+}
+
+alert("Action: " + action);
+}
+
+/*********task18*********************/
+function week(){
+  var dayNum = parseInt(prompt("Enter a number from 1 to 7 representing the day of the week:"));
+
+var day;
+if (dayNumber === 1) {
+  day = "Monday";
+} else if (dayNum === 2) {
+  day = "Tuesday";
+} else if (dayNum === 3) {
+  day = "Wednesday";
+} else if (dayNumb === 4) {
+  day = "Thursday";
+} else if (dayNum === 5) {
+  day = "Friday";
+} else if (dayNum === 6) {
+  day = "Saturday";
+} else if (dayNum === 7) {
+  day = "Sunday";
+} else {
+  day = "Invalid day number";
+}
+alert("The corresponding day of the week is: " + day);
+}
+
+/*task19*******************/
+function room(){
+  var singlePricePerNight = 50;
+  var doublePricePerNight = 80;
+  var suitePricePerNight = 120;
+
+
+  var roomType = prompt("Enter the type of room you want to book (Single, Double, Suite):").toLowerCase();
+  var numNights = parseInt(prompt("Enter the number of nights you want to stay:"));
+
+  var totalCost;
+  if (roomType === "single") {
+    totalCost = singlePricePerNight * numNights;
+  } else if (roomType === "double") {
+    totalCost = doublePricePerNight * numNights;
+  } else if (roomType === "suite") {
+    totalCost = suitePricePerNight * numNights;
+  } else {
+    totalCost = "Invalid room type";
+  }
+
+  alert("The total cost for your booking is: $" + totalCost.toFixed(2));
+}
+/*task 20**********************/
+
+function number1(){
+  var number = parseInt(prompt("Enter a number:"));
+
+if (!isNaN(number)) {
+
+  var table = "";
+  for (var i = 1; i <= 10; i++) {
+    table += number + " x " + i + " = " + (number * i) + "\n";
+  }
+  alert("Multiplication table for " + number + ":\n\n" + table);
+} else {
+  
+  alert("again Please enter a valid number.");
+}
+}
+
+</script>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!--task1******************-->
+     <div>
+        <h1> BMI </h1>
+        <button type="button" onclick="fun1()">  input a number </button>
+        </div>
+        <br><br>
+
+ <!--task2******************-->
+ <div>
+    <h1>  day number in integer  </h1>
+    <button type="button" onclick="fun2()">  input a number </button>
+    </div>
+    <br><br>
+     <!--task3******************-->
+    <div>
+       <h1> check whether </h1>
+       <button type="button" onclick="fun3()">  input a number </button>
+       </div>
+       <br><br>
+        <!--task4******************-->
+       <div>
+          <h1>  given number is positive or negative. </h1>
+          <button type="button" onclick="fun4()">  input a number </button>
+          </div>
+          <br><br>
+<!-- ***********************************-->
+</body>
+
+
+<script>
+/*****tak1********************/
+function fun1(){
+    var monthNumber = parseInt(prompt("Enter the month number (1-12):"));
+
+var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+if (monthNumber >= 1 && monthNumber <= 12) {
+  var numberOfDays = daysInMonth[monthNumber - 1];
+
+  alert("Month " + monthNumber + " has " + numberOfDays + " days.");
+} else {
+  alert("Invalid month number. Please enter a number between 1 and 12.");
+}
+}
+/*****tak1********************/
+function fun2(){
+    var dayNumber = parseInt(prompt("Enter the day number (1-7):"));
+var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+if (dayNumber >= 1 && dayNumber <= 7) {
+
+  var dayName = daysOfWeek[dayNumber - 1];
+
+  alert("The day corresponding to day number " + dayNumber + " is: " + dayName);
+} else {
+
+  alert("Invalid day number. Please enter a number between 1 and 7.");
+}
+}
+/*********task3*********************/
+function fun3(){
+    var angle1 = parseInt(prompt("Enter the first angle of the triangle:"));
+  var angle2 = parseInt(prompt("Enter the second angle of the triangle:"));
+  var angle3 = parseInt(prompt("Enter the third angle of the triangle:"));
+
+  //
+  var isValidTriangle = (angle1 + angle2 + angle3) === 180;
+
+  
+  if (isValidTriangle) {
+    alert("The triangle is valid.");
+  } else {
+    alert("The triangle is not valid.");
+  }
+}
+/***********task4***************/
+function fun4(){
+    var number = parseInt(prompt("Enter a number:"));
+
+
+if (number > 0) {
+  alert(number + " is a positive number");
+} else if (number < 0) {
+  alert(number + " is a negative number");
+} else {
+  alert("The number is zero");
+}
+}
+</script>
+</html>
