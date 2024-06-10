@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>HTML Forms</h2>
+<p id="demo">samer ty</p>
+<button type="button" onclick="document.getElementById('demo').innerHTML='yaser shboul' ">click here</button>
+<button type=="button" onclick="document.getElementById('demo').innerHTML='tamer'">click on</button>
+<hr>
+
+    <hr>
+</body>
+</html>
+<script>
+  // Task 3
+function month() {
+    let input = prompt("Please enter your birthdate month (as a number):");
+    let month = parseInt(input);
+    let monthName;
+    switch (month) {
+        case 1:
+            monthName = "January";
+            break;
+        case 2:
+            monthName = "February";
+            break;
+        case 3:
+            monthName = "March";
+            break;
+        case 4:
+            monthName = "April";
+            break;
+        case 5:
+            monthName = "May";
+            break;
+        case 6:
+            monthName = "June";
+            break;
+        case 7:
+            monthName = "July";
+            break;
+        case 8:
+            monthName = "August";
+            break;
+        case 9:
+            monthName = "September";
+            break;
+        case 10:
+            monthName = "October";
+            break;
+        case 11:
+            monthName = "November";
+            break;
+        case 12:
+            monthName = "December";
+            break;
+        default:
+            monthName = "Invalid input";
+    }
+    console.log("The output:", monthName);
+}
+
+// Task 2
+function loopstae() {
+    let currentNumber = 1;
+    let result = "";
+    for (let i = 1; i <= 4; i++) {
+        for (let j = 1; j <= i; j++) {
+            result += currentNumber + " ";
+            currentNumber++;
+        }
+        console.log(result);
+        result = "";
+    }
+}
+
+// Task 3
+function loop2() {
+    for (let i = 1; i <= 1000; i++) {
+        if (i % 13 === 0) {
+            console.log(i);
+        }
+    }
+}
+
+// Task 4
+function multiplication2(a, b) {
+    let result = 0;
+    for (let i = 0; i < b; i++) {
+        result += a;
+    }
+    return result;
+}
+console.log(multiplication2(4, 5));
+
+// Task 5
+function triangleArea(width, height) {
+    return 0.5 * width * height;
+}
+console.log(triangleArea(5, 4));
+
+// Task 6
+function isPandigital(number) {
+    let numStr = number.toString();
+    for (let i = 0; i <= 9; i++) {
+        let digitFound = false;
+        for (let j = 0; j < numStr.length; j++) {
+            if (parseInt(numStr[j]) === i) {
+                digitFound = true;
+                break;
+            }
+        }
+        if (!digitFound) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(isPandigital(98140723568910));
+
+// Task 7
+let fvdrink = prompt("enter your favorite drink");
+fvdrink = fvdrink.toLowerCase();
+let drinkPrice;
+switch (fvdrink) {
+    case "coffee":
+        drinkPrice = 2;
+        break;
+    case "tea":
+        drinkPrice = 6;
+        break;
+    case "juice":
+        drinkPrice = 9;
+        break;
+    default:
+        console.log("Drink is not found");
+}
+if (drinkPrice !== undefined) {
+    console.log(`The price of ${fvdrink} is $${drinkPrice}.`);
+}
+
+// Task 8
+function fullName(firstName, lastName) {
+    return firstName + " " + lastName;
+}
+console.log(fullName("yaser", "shboul")); 
+</script>
+
