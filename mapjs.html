@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>HTML Forms</h2>
+<p id="demo">samer ty</p>
+<button type="button" onclick="document.getElementById('demo').innerHTML='yaser shboul' ">click here</button>
+<button type=="button" onclick="document.getElementById('demo').innerHTML='tamer'">click on</button>
+<hr>
+
+    <hr>
+</body>
+</html>
+<script>
+
+  // task1*************
+  function doubleValues(arr){ 
+
+   return arr.map(num=>num*2);
+    
+}
+  console.log(doubleValues([1, 2, 3]));
+
+  // task2*************
+  function stringItUp(arr){ 
+    
+    return arr.map(num=>num.toString());
+     
+ }
+   console.log(stringItUp([1, 2, 3]));
+
+   //Task3***************
+   function capitalizeNames(arr) {
+    return arr.map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase());
+    return arr.map(num=>num.charAt(0).toUpperCase()+num.slice(1).toLowerCase());
+}
+
+console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]));
+
+//Task4********************
+function namesOnly(arr) {
+    return arr.map(obj => obj.name);
+}
+
+console.log(namesOnly([{ name: "Angelina Jolie", age: 80 }]));
+
+//Task5*********************
+function makeStrings(arr) {
+    return arr.map(obj => {
+        if (obj.age >= 18) {
+            return `${obj.name} can go to The Matrix`;
+        } else {
+            return `${obj.name} is under age!!`;
+        }
+    });
+}
+
+//Task6******************
+function readyToPutInTheDOM(arr) {
+    return arr.map(obj => `<h1>${obj.name}</h1><h2>${obj.age}</h2>`);
+}
+
+console.log(readyToPutInTheDOM([
+    { name: "Angelina Jolie", age: 80 }]));
+
+//Task7****************
+    function doubleValues(arr) {
+    return arr.map(num => num * 2);
+}
+console.log("Test Case 1:", doubleValues([1, 2, 3])); 
+ 
+//Tak8*******************
+function valTimesIndex(arr) {
+    return arr.map((num, index) => num * index);
+}
+
+console.log("Test Case 1:", valTimesIndex([1, 2, 3]));
+
+//Task9**************************
+function extractKey(arr, key) {
+    return arr.map(obj => obj[key]);
+}
+
+console.log(extractKey([{ name: 'Elie' }, { name: 'Tim' }, { name: 'Matt' }, { name: 'Colt' }], 'name'));
+
+//Task10*********************
+function extractFullName(arr) {
+    return arr.map(obj => `${obj.first} ${obj.last}`);
+}
+
+console.log(extractFullName([
+    { first: 'Elie', last: "Schoppik" },
+    { first: 'Tim', last: "Garcia" },
+    { first: 'Matt', last: "Lane" },
+    { first: 'Colt', last: "Steele" }
+]));
+</script>
