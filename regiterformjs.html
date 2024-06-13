@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>register form</title>
+</head>
+<body>
+
+<h2>Personal Data Form</h2>
+
+<form id="personalDataForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age" required><br><br>
+
+    <label for="gender">Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br><br>
+
+    <label for="description">Brief Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+    <label for="major">Major and University:</label><br>
+    <input type="text" id="major" name="major" required><br><br>
+
+    <label for="languages">Programming Languages:</label><br>
+    <input type="checkbox" id="language1" name="languages" value="JavaScript">
+    <label for="language1"> JavaScript</label><br>
+    <input type="checkbox" id="language2" name="languages" value="Python">
+    <label for="language2"> Python</label><br>
+    <input type="checkbox" id="language3" name="languages" value="Java">
+    <label for="language3"> Java</label><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<div id="dataCards"></div>
+
+<script>
+    
+    document.getElementById('personalDataForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+  
+        var formData = {
+            name: document.getElementById('name').value,
+            age: document.getElementById('age').value,
+            gender: document.querySelector('input[name="gender"]:checked').value,
+            description: document.getElementById('description').value,
+            major: document.getElementById('major').value,
+            languages: []
+        };
+
+        var checkboxes = document.getElementsByName('languages');
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                formData.languages.push(checkboxes[i].value);
+            }
+        }
+
+        
+        localStorage.setItem('personalData', JSON.stringify(formData));
+
+      
+        displayData(formData);
+    });
+
+    
+    function displayData(data) {
+        var dataCards = document.getElementById('dataCards');
+        var card = document.createElement('div');
+        card.innerHTML = `
+            <div>
+                <h3>${data.name}</h3>
+                <p><strong>Age:</strong> ${data.age}</p>
+                <p><strong>Gender:</strong> ${data.gender}</p>
+                <p><strong>Description:</strong> ${data.description}</p>
+                <p><strong>Major and University:</strong> ${data.major}</p>
+                <p><strong>Programming Languages:</strong> ${data.languages.join(', ')}</p>
+            </div>
+        `;
+        dataCards.appendChild(card);
+    }
+
+    
+    var savedData = JSON.parse(localStorage.getItem('personalData'));
+    if (savedData) {
+        displayData(savedData);
+    }
+</script>
+
+</body>
+</html>
